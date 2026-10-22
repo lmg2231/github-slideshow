@@ -1,16 +1,10 @@
-<script src="{{ site.baseurl }}/node_modules/reveal.js/js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
-					{ src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
-					{ src: 'node_modules/reveal.js/plugin/highlight/highlight.js' },
-					{ src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
+<script src="{{ site.baseurl }}/assets/reveal/dist/reveal.js"></script>
+<script src="{{ site.baseurl }}/assets/reveal/dist/plugin/markdown.js"></script>
+<script src="{{ site.baseurl }}/assets/reveal/dist/plugin/highlight.js"></script>
+<script src="{{ site.baseurl }}/assets/reveal/dist/plugin/notes.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+  });
+</script>
