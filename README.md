@@ -11,3 +11,19 @@ I'm the GitHub Learning Lab bot and I'm here to help guide you in your journey t
 I'll meet you over there, can't wait to get started!
 
 This course is using the :sparkles: open source project [reveal.js](https://github.com/hakimel/reveal.js/). In some cases we’ve made changes to the history so it would behave during class, so head to the original project repo to learn more about the cool people behind this project.
+
+## Build and security checks
+
+Use Node 24.22.1 and Ruby 3.4.11, as pinned in `.nvmrc` and `.ruby-version`.
+
+```sh
+npm ci
+npm run vendor
+bundle install
+sh script/cibuild
+npm audit
+bundle exec bundler-audit check --update
+```
+
+The served Reveal.js assets are committed under `assets/reveal`; regenerate them after changing its npm version. Do not commit `node_modules`. See [SECURITY.md](SECURITY.md) for audit results and the distinction between these build dependencies and GitHub's managed Pages environment.
+
